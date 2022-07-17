@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #c7365f;
+  background-image: linear-gradient(to bottom left, #ddd 20%, #189 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HEAD  */
+body h1{
+  padding: .3rem;
+  border: 1px solid #189;
+  border-radius: 5px;
+  margin: .7rem;
+  font-size: 2.4rem;
+}
+nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav .links{
+  background-color: black;
+  color: #ddd;
+  font-size: 1.8rem;
+  height: max-content;
+  opacity: 0.8;
+  width: 85%;
+  margin: 0 auto;
+  padding: 2rem;
+  position: fixed;
+  top: 12%;
+  z-index: 1;
+  border-radius: 9px;
+  display: none;
+  text-align: left;
+  line-height: 2;
+}
+.links h3{
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* BOTTOM */
+pre{
+  font-size: 1.4rem;
+  margin: .5rem;
+  font-weight: bold;
+  color: #000;
+  opacity: 0.7;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 85%;
+  height: 80%;
+  background-color: rgba(178, 200, 200, 0.5);
+  -webkit-backdrop-filter: blur(200px);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.player {
+  flex: 40%;
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+/* ELEMENTS */
+.name {
+  color: #333;
+  position: relative;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  margin-bottom: auto;
+}
+
+.player--active {
+  background-color: rgba(250, 250, 250, 0.5);
+}
+.player--active .name {
+  font-weight: 700;
+  word-spacing: 4px;
+  color: #c7365f;
+  font-size: 3.6rem;
+}
+.player--active .score {
+  font-weight: 500;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+
+.current {
+  background-color: #c7365f;
+  opacity: 0.9;
+  border-radius: 9px;
+  color: #fff;
+  width: 60%;
+  padding: .7rem;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.4s;
+  color: #c7365f;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 2.5rem;
+  border-radius: 9px;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.3);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  top: 39.3rem;
+}
+.btn--hold {
+  top: 46.1rem;
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.btn:focus{
+  outline: none;
+}
+
+.target-score{
+  text-align: center;
+  top: 11rem;
+  font-size: 1.4rem;
+  width: 12rem;
+  height: 4.2rem;
+  padding: 0.5rem 1rem;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 21.5rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.player--winner {
+  background-color: lavender;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+/* RESPONSIVE LAYOUT */
+@media screen and (max-width:540px){
+  body h1{
+    font-size: 1.5rem;
+  }
+  nav .links{
+    width: 90%;
+    font-size: 1.2rem;
+    top: 6.5%;
+    line-height: 2;
+  }
+  main{
+    border-radius: 9px;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+  }
+  .player{
+    padding: 5rem;
+    height: 50%;
+  }
+  .name{
+    font-size: 2rem;
+  }
+  .player--active .name{
+    font-size: 2.4rem;
+  }
+  .score{
+    font-size: 3.5rem;
+  }
+  .current{
+    width: 45%;
+    margin: 1rem;
+  }
+  .current-label{
+    font-size: 1.5rem;
+  }
+  .current-score{
+    font-size: 2.3rem;
+  }
+
+  /* ABSOLUTELY POSITIONED */
+  .btn{
+    font-size: 1.2rem;
+    padding: 0.5rem 1.1rem;
+    width: 12rem;
+    height: 3.6rem;
+  }
+  .btn::first-letter{
+    font-size:1.5rem;
+    margin-right: 0.5rem;
+  }
+  .btn--new{
+    top: 1%;
+    left: 21%;
+  }
+  .btn--roll{
+    top: 47%;
+    left: 21%;
+  }
+  .btn--hold{
+    top: 47%;
+    left: 79%;
+  }
+  .dice{
+    height: 5rem;
+    top: 46%;
+  }
+  .target-score{
+    width: 10rem;
+    top: 1%;
+    left: 82%;
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pig Game</title>
+  </head>
+  <body>
+    <nav>
+      <h1>🎲 How To Play ⤵</h1>
+      <div class="links">
+        <h3> How To Play </h3>
+        <p>➡ The goal of the game is to accumulate as many points as required, before the other player.</p>
+        <p>➡ Each player has a turn to roll the dice.</p>
+        <p>➡ At each player's turn, they get to roll the dice as many times as possible till they lose their turns.</p>
+        <p>➡ You lose your turn when you roll a "1", roll two "6's" successively, or press hold.</p>
+        <p>➡ If you roll a "1", you lose your current score.</p>
+        <p>➡ If you roll two "6's", you lose your total score.</p>
+        <p>➡ After rolling the dice, save your points by pressing hold, else you lose your current score.</p>
+        <p>➡ You can set and reset the target score via the "SET TARGET" bar.</p>
+        <p>➡ The first player to reach the target score wins.</p> <br>
+        <p>➡ GOOD LUCK!!</p>
+
+      </div>
+    </nav>
+
+    <main>
+
+      <section class="player player--0 player--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="score--0">43</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--0">0</p>
+        </div>
+      </section>
+
+      <section class="player player--1">
+        <h2 class="name" id="name--1">Player 2</h2>
+        <p class="score" id="score--1">24</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--1">0</p>
+        </div>
+      </section>
+
+      <img src="dice-5.png" alt="Playing dice" class="dice" />
+      <button class="btn btn--new">🔄 New game</button>
+      <button class="btn btn--roll">🎲 Roll dice</button>
+      <button class="btn btn--hold">📥 Hold</button>
+      <input class="btn target-score" placeholder="Set Target" type="number">
+    </main>
+    <pre> ME_Ndaeyo </pre>
+    <script src="script.js"></script>
+  </body>
+</html>
